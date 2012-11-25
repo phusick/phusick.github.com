@@ -1,0 +1,13 @@
+exclude: ["README.md", "nbproject"]
+auto: true
+pygments: true
+
+title: Curriculum vitae
+tagline: "State-of-the-art Software Developer, Javascript Nerd, Long Distance Runner and Cyclist."
+author: 
+  name: Martin Vicen
+  github: phusick
+
+production_url: http://phusick.github.com
+
+permalink: /:categories/:year/:month/:day/:title 
