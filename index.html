@@ -325,7 +325,7 @@ version: 0.1
       <h3>Shoe Selector</h3>
     </div>
     <div class="span9">
-      <h4>Running Shoe Finder &bull; 2008</h4>
+      <h4>Running Shoe Finder &bull; 2008 &bull; <button id="btn-ss">screenshots</button></h4>
       <p>
         <i>Answer-these-questions-and-we'll-find-some-shoes-that-are-right-for-you</i>
         application for the most popular running web site and print magazine
@@ -712,3 +712,90 @@ version: 0.1
   </div><!-- Profiles:end -->
   
 </section><!-- ADDITIONAL INFORMATION:end -->
+
+
+<!-- SCREENSHOT GALLERY -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/touchcarousel/jquery.touchcarousel-1.0.min.js"></script>
+
+<script type="text/template" id="shoe-selector-template">
+  <div id="carousel-gallery" class="touchcarousel  black-and-white popup-carousel">  
+    <ul class="touchcarousel-container">
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-list.png"
+          width="635"
+          height="600" />      
+      </li>  
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-filters.png"
+          width="635"
+          height="600" />      
+      </li>
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-detail.png"
+          width="655" 
+          height="600" />      
+      </li>
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-admin-selector.png" 
+          width="1024" 
+          height="600" />      
+      </li>
+      <li class="touchcarousel-item">
+        <img
+          src="images/screenshots/shoe-selector/shoeselector-admin-shoes.png"
+          width="1024"
+          height="600" />      
+      </li>   
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-admin-labels.png"
+          width="1024" 
+          height="600" />      
+      </li>       
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-admin-add-shoe.png" 
+          width="1024" 
+          height="600" />      
+      </li>       
+      <li class="touchcarousel-item">
+        <img 
+          src="images/screenshots/shoe-selector/shoeselector-admin-flickr.png" 
+          width="1024"
+          height="600" />      
+      </li>       
+    </ul>
+  </div>
+</script>
+
+<script>
+
+</script>
+
+<script>
+  jQuery(function($) {
+    var Underlay = {% include js/Underlay.js %}
+    var PopupGallery = {% include js/PopupGallery.js %}
+
+    var shoeSelectorTemplate = $("#shoe-selector-template").text();
+    var shoeSelector = new PopupGallery(shoeSelectorTemplate, Underlay.getDefault());
+
+
+    $("#btn-ss").click(function() {
+      showUnderlay();
+    });
+
+    function showUnderlay() {
+      shoeSelector.show();
+    }
+
+  });
+</script>
+
+

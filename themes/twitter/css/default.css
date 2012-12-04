@@ -1,3 +1,4 @@
+
 @import url('pfdindisplaypro-inline.css');
 
 h1,h2,h3,h4,h5,h6 { font-family: PFDinDisplayPro; }
@@ -90,4 +91,86 @@ h4 {
 
 section {
   margin-top: 3em;
+}
+
+/*
+ * Underlay
+ */
+
+.underlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: .5;
+  z-index: 100;
+}
+
+.popup-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  z-index: 101;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+.popup-wrapper .close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 110;
+  display: block;
+  background-color: #333;
+  color: white;
+  border: 1px solid #999;
+  padding: 6px 10px;
+  border-radius: 3px;
+  box-shadow: 0 0 6px 2px #FFF;
+}
+
+/*
+ * TouchCarousel 
+ */
+
+.popup-carousel {
+  width: 100%;
+  height: 600px;
+  margin: 0;
+  padding: 15px 0;
+  background: #EFEFEF;
+  overflow: hidden !important;
+}   
+.popup-carousel .touchcarousel-wrapper {
+  overflow: visible;
+  margin-left: 80px;
+}
+.popup-carousel .touchcarousel-item {
+  margin-right: 15px;   
+  background: #CCC; 
+  height: 600px;
+}
+.popup-carousel .arrow-icon.left {
+  left: 25px;       
+}
+.popup-carousel .arrow-icon.right {
+  right: 25px;      
+}
+.popup-carousel .arrow-holder {
+  width: 60px;  
+}
+.popup-carousel  .scrollbar-holder {
+  bottom: 6px;
+}
+
+.popup-carousel img {
+  max-width: none;
+  box-shadow: 0 0 6px 2px #AAA;
 }
