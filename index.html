@@ -213,12 +213,18 @@ version: 0.1
   </div>
   
   <!-- Czatca.cz -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>czatca.cz</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Content Management System &bull; 2011</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="cms">
+        screenshots
+      </button>
       <p>
         A CMS created solely myself for Czech Air Traffic Controllers Association 
         to publish articles, and share documents and events' calendar
@@ -281,12 +287,18 @@ version: 0.1
   </div><!-- Czatca.cz:end -->
 
   <!-- Support Center -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>Support Center</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Help Desk Software &bull; 2006</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="support-center">
+        screenshots
+      </button>
       <p>
         A single-page application created in a feature-driven fashion: 
         in a pair, I was writting JavaScript, HTML and CSS while 
@@ -320,12 +332,18 @@ version: 0.1
   </div><!-- Support Center:end -->
 
   <!-- Shoe Selector -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>Shoe Selector</h3>
     </div>
-    <div class="span9">
-      <h4>Running Shoe Finder &bull; 2008 &bull; <button id="btn-ss">screenshots</button></h4>
+    <div class="span9 project-description">
+      <h4>Running Shoe Finder &bull; 2008</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="shoe-selector">
+        screenshots
+      </button>
       <p>
         <i>Answer-these-questions-and-we'll-find-some-shoes-that-are-right-for-you</i>
         application for the most popular running web site and print magazine
@@ -341,12 +359,18 @@ version: 0.1
   </div><!-- Shoe Selector:end -->
 
   <!-- PurCV -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>PurCV</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Curriculum Vitae Editor &bull; 2010</h4>
+      <button
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="purcv">
+        screenshots
+      </button>
       <p>
         Guided by the set of PSDs I developed most of the JavaScript-heavy
         PurCV while mentoring and coaching junior web developer. Characteristics:
@@ -707,6 +731,9 @@ version: 0.1
         <li>
           <a href="https://everplaces.com/phusick">Everplaces</a>
         </li>
+        <li>
+          <a href="http://springpad.com/#!/martin.vicen/notebooks/computerbooks/blocks?tag=must-read">Books</a> every programmer must read.
+        </li>
       </ul>
     </div>
   </div><!-- Profiles:end -->
@@ -719,83 +746,26 @@ version: 0.1
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="js/touchcarousel/jquery.touchcarousel-1.0.min.js"></script>
 
+<script type="text/template" id="cms-template">
+{% include js/templates/cms.html %}
+</script>
+
+<script type="text/template" id="support-center-template">
+{% include js/templates/support-center.html %}
+</script>
+
 <script type="text/template" id="shoe-selector-template">
-  <div id="carousel-gallery" class="touchcarousel  black-and-white popup-carousel">  
-    <ul class="touchcarousel-container">
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-list.png"
-          width="635"
-          height="600" />      
-      </li>  
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-filters.png"
-          width="635"
-          height="600" />      
-      </li>
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-detail.png"
-          width="655" 
-          height="600" />      
-      </li>
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-admin-selector.png" 
-          width="1024" 
-          height="600" />      
-      </li>
-      <li class="touchcarousel-item">
-        <img
-          src="images/screenshots/shoe-selector/shoeselector-admin-shoes.png"
-          width="1024"
-          height="600" />      
-      </li>   
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-admin-labels.png"
-          width="1024" 
-          height="600" />      
-      </li>       
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-admin-add-shoe.png" 
-          width="1024" 
-          height="600" />      
-      </li>       
-      <li class="touchcarousel-item">
-        <img 
-          src="images/screenshots/shoe-selector/shoeselector-admin-flickr.png" 
-          width="1024"
-          height="600" />      
-      </li>       
-    </ul>
-  </div>
+{% include js/templates/shoe-selector.html %}
+</script>
+
+<script type="text/template" id="purcv-template">
+{% include js/templates/purcv.html %}
 </script>
 
 <script>
-
-</script>
-
-<script>
-  jQuery(function($) {
-    var Underlay = {% include js/Underlay.js %}
-    var PopupGallery = {% include js/PopupGallery.js %}
-
-    var shoeSelectorTemplate = $("#shoe-selector-template").text();
-    var shoeSelector = new PopupGallery(shoeSelectorTemplate, Underlay.getDefault());
-
-
-    $("#btn-ss").click(function() {
-      showUnderlay();
-    });
-
-    function showUnderlay() {
-      shoeSelector.show();
-    }
-
-  });
+jQuery(function($) {
+{% include js/index.js %}
+});
 </script>
 
 

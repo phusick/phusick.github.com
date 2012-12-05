@@ -9,7 +9,7 @@
 
   PopupGallery.prototype.create = function() {
     this.carouselNode = $(this.template);
-    this.closeNode = $('<button class="close-button">Close</button>');
+    this.closeNode = $('<button class="btn btn-warning btn-large btn-close">Close</button>');
 
     this.wrapper = $('<div class="popup-wrapper" style="display:none;"></div>');
     this.wrapper.append(this.carouselNode);
@@ -56,7 +56,6 @@
 
     var self = this;
     $(window).resize(function() {
-      console.log("reisze");
       self.center();
     });
   }

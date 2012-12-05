@@ -90,7 +90,19 @@ h4 {
 }
 
 section {
+  position: relative;
   margin-top: 3em;
+}
+
+.project,
+.project-description {
+  position: relative;
+}
+
+button.btn-project {
+  position: absolute;
+  top: -9px;
+  right: 0;
 }
 
 /*
@@ -122,18 +134,12 @@ section {
   overflow: hidden !important;
 }
 
-.popup-wrapper .close-button {
+.popup-wrapper .btn-close {
   position: absolute;
   top: 8px;
   right: 8px;
   z-index: 110;
   display: block;
-  background-color: #333;
-  color: white;
-  border: 1px solid #999;
-  padding: 6px 10px;
-  border-radius: 3px;
-  box-shadow: 0 0 6px 2px #FFF;
 }
 
 /*
@@ -148,24 +154,30 @@ section {
   background: #EFEFEF;
   overflow: hidden !important;
 }   
+
 .popup-carousel .touchcarousel-wrapper {
   overflow: visible;
-  margin-left: 80px;
+  margin-left: 50px;
 }
+
 .popup-carousel .touchcarousel-item {
   margin-right: 15px;   
   background: #CCC; 
   height: 600px;
 }
+
 .popup-carousel .arrow-icon.left {
   left: 25px;       
 }
+
 .popup-carousel .arrow-icon.right {
   right: 25px;      
 }
+
 .popup-carousel .arrow-holder {
   width: 60px;  
 }
+
 .popup-carousel  .scrollbar-holder {
   bottom: 6px;
 }
@@ -173,4 +185,6 @@ section {
 .popup-carousel img {
   max-width: none;
   box-shadow: 0 0 6px 2px #AAA;
+  width: 1024px;
+  height: 600px;
 }
