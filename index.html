@@ -213,12 +213,18 @@ version: 0.1
   </div>
   
   <!-- Czatca.cz -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>czatca.cz</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Content Management System &bull; 2011</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="cms">
+        screenshots
+      </button>
       <p>
         A CMS created solely myself for Czech Air Traffic Controllers Association 
         to publish articles, and share documents and events' calendar
@@ -281,12 +287,18 @@ version: 0.1
   </div><!-- Czatca.cz:end -->
 
   <!-- Support Center -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>Support Center</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Help Desk Software &bull; 2006</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="support-center">
+        screenshots
+      </button>
       <p>
         A single-page application created in a feature-driven fashion: 
         in a pair, I was writting JavaScript, HTML and CSS while 
@@ -320,12 +332,18 @@ version: 0.1
   </div><!-- Support Center:end -->
 
   <!-- Shoe Selector -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>Shoe Selector</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Running Shoe Finder &bull; 2008</h4>
+      <button 
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="shoe-selector">
+        screenshots
+      </button>
       <p>
         <i>Answer-these-questions-and-we'll-find-some-shoes-that-are-right-for-you</i>
         application for the most popular running web site and print magazine
@@ -341,12 +359,18 @@ version: 0.1
   </div><!-- Shoe Selector:end -->
 
   <!-- PurCV -->
-  <div class="row-fluid">
+  <div class="row-fluid project">
     <div class="span3">
       <h3>PurCV</h3>
     </div>
-    <div class="span9">
+    <div class="span9 project-description">
       <h4>Curriculum Vitae Editor &bull; 2010</h4>
+      <button
+        type="button"
+        class="btn btn-small btn-project"
+        data-template="purcv">
+        screenshots
+      </button>
       <p>
         Guided by the set of PSDs I developed most of the JavaScript-heavy
         PurCV while mentoring and coaching junior web developer. Characteristics:
@@ -707,8 +731,41 @@ version: 0.1
         <li>
           <a href="https://everplaces.com/phusick">Everplaces</a>
         </li>
+        <li>
+          <a href="http://springpad.com/#!/martin.vicen/notebooks/computerbooks/blocks?tag=must-read">Books</a> every programmer must read.
+        </li>
       </ul>
     </div>
   </div><!-- Profiles:end -->
   
 </section><!-- ADDITIONAL INFORMATION:end -->
+
+
+<!-- SCREENSHOT GALLERY -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="js/touchcarousel/jquery.touchcarousel-1.0.min.js"></script>
+
+<script type="text/template" id="cms-template">
+{% include js/templates/cms.html %}
+</script>
+
+<script type="text/template" id="support-center-template">
+{% include js/templates/support-center.html %}
+</script>
+
+<script type="text/template" id="shoe-selector-template">
+{% include js/templates/shoe-selector.html %}
+</script>
+
+<script type="text/template" id="purcv-template">
+{% include js/templates/purcv.html %}
+</script>
+
+<script>
+jQuery(function($) {
+{% include js/index.js %}
+});
+</script>
+
+
