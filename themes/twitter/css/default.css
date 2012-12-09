@@ -99,7 +99,7 @@ section {
   position: relative;
 }
 
-button.btn-project {
+.btn-project {
   position: absolute;
   top: -9px;
   right: 0;

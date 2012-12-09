@@ -11,3 +11,7 @@ author:
 production_url: http://phusick.github.com
 
 permalink: /:categories/:year/:month/:day/:title 
+
+analytics:
+  google: 
+    tracking_id: 'UA-36933140-1'
